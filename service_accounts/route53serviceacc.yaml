@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: myfutuerroute53serviceaccount
+  namespace: default
+  annotations:
+    eks.amazonaws.com/role-arn: arn:aws:iam::976552365380:role/mihailo-route53-access-role-for-helmchart
