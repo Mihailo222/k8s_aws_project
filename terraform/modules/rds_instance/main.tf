@@ -31,15 +31,38 @@ resource "aws_security_group" "db_sg" {
  
 }
 
+resource "aws_db_parameter_group" "example" {
+  name   = "my-pg"
+  family = "postgres13"
+
+  parameter {
+    name  = "log_connections"
+    value = "1"
+  }
+
+  lifecycle {
+    create_before_destroy = true
+  }
+}
+
+
 resource "aws_db_instance" "rds_db" {
-   allocated_storage = 20
+
+  allocated_storage = "${var.allocated_storage}"
   db_name              = "${var.db_name}"
-  engine               = "mysql"
-  engine_version       = "8.0.35"
-  instance_class       = "db.m5d.large"
+  engine               = "${var.engine}"
+  engine_version       = "${var.engine_version}"
+  instance_class       = "${var.instance_class}"
+  
   username             = "${var.db_username}"
   password             = "${var.db_username}"
+  
   skip_final_snapshot = true  
+
+  apply_immediately = true
+  allow_major_version_upgrade = true
+  auto_minor_version_upgrade = false
+
   
   db_subnet_group_name = aws_db_subnet_group.subnet_group.name 
   vpc_security_group_ids = [aws_security_group.db_sg.id]  

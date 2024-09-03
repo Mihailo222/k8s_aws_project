@@ -13,7 +13,7 @@ variable "user_policy_name" {
 variable "secrets_name" {
   description = "Secret name from secret manager"
   type = string
-  default = "" //import from additional module
+  default = "mihailo_nextcloud_secrets" //import from additional module
 }
 
 variable "region" {
@@ -25,7 +25,11 @@ variable "region" {
 variable "account_id" {
   description = "ID of the user with grants to access s3 bucket"
   type = string
-  default=""
+  default="976552365380"
 }
 
+variable "variables_from_tfvars" {
+  description = "Variables from .tfvars file."
+  type = string
+}
 
