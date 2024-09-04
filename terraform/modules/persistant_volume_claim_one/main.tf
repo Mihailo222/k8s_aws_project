@@ -1,6 +1,6 @@
 resource "kubernetes_persistent_volume" "pv1" {
     metadata {
-      name = "${var.name}"
+      name = "${var.pv_name}"
     }
 
     spec {

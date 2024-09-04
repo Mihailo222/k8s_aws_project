@@ -29,8 +29,8 @@ description = "Secret where AWS IAM user credentials are stored."
 type = string
 default = "" //depends on 
 }
-
-variable "variables_from_tfvars" {
-  description = "Variables from tfvars."
-  type = string
+variable "secret_store_namespace" {
+  description = "SS namespace."
+  type = any
+  default = ""
 }

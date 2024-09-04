@@ -15,8 +15,8 @@ variable "path_to_the_chart" {
   type = string
   default = ""
 }
-
+/*
 variable "variable_from_tfvars" {
   description = "Variables for import from tfvars."
   type = string
-}
+}*/

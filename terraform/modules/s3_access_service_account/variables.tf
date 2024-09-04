@@ -5,7 +5,7 @@ variable "service_account_name" {
   
 }
 
-variable "service_account_namespace" {
+variable "namespace_s3" {
     description = "Service account namespace."
     type = string
     default = "default"
@@ -22,8 +22,8 @@ variable "user_id" {
   type = string
   default = ""
 }
-
+/*
 variable "variables_from_tfvars" {
   description = "Variables from tfvars."
   type = string
-}
+}*/

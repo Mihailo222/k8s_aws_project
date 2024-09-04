@@ -9,8 +9,8 @@ variable "az" {
   type = string
   default = ""
 }
-
+/*
 variable "variables_from_tfvars" {
   description = "Variables from tfvars."
   type = string
-}
+}*/

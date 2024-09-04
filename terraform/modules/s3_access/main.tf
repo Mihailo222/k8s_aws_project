@@ -23,13 +23,13 @@ data "aws_iam_policy_document" "assume_role_policy" {
     effect    = "Allow"
     principals { 
       type        = "Federated"
-      identifiers = ["arn:aws:iam::${var.account_id}:oidc-provider/oidc.eks.${var.region}.amazonaws.com/id/${var.cluster_oidc_id}"] 
+      identifiers = ["arn:aws:iam::${var.account_id}:oidc-provider/oidc.eks.${var.region_s3}.amazonaws.com/id/${var.cluster_oidc_id}"] 
     }
 
     condition {
       test     = "StringEquals"
-      variable = "oidc.eks.${var.region}.amazonaws.com/id/${var.cluster_oidc_id}:sub" 
-      values  = ["system:serviceaccount:${var.namespace}:${var.service_account_name}"] 
+      variable = "oidc.eks.${var.region_s3}.amazonaws.com/id/${var.cluster_oidc_id}:sub" 
+      values  = ["system:serviceaccount:${var.namespace_s3}:${var.service_account_name_s3}"] 
     }
   }
 }

@@ -27,8 +27,8 @@ variable "secret_access_key_key" {
    type = string
    default = ""
 }
-
+/*
 variable "variables_from_tfvars" {
   description = "Variables from tfvars file"
   type = string
-}
+}*/

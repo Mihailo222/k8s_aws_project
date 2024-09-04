@@ -10,13 +10,13 @@ variable "helm_release_name" {
   default = ""
 }
 
-variable "helm_rlease_chart" {
+variable "helm_release_chart" {
   description = "Chart name."
   type = string
   default = ""
 }
 
-variable "variables_from_tfvars" {
+/*variable "variables_from_tfvars" {
   description = "Variables from tfvars file"
   type = string
-}
+}*/

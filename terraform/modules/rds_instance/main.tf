@@ -1,14 +1,14 @@
 #import security groups from EKS cluster
 data "aws_security_group" "eks_sg1" {
-id = "${var.eks_sg1}"
+id = var.eks_sg1
 }
 data "aws_security_group" "eks_sg2" {
-id = "${var.eks_sg2}"
+id = var.eks_sg2
 }
 
 resource "aws_db_subnet_group" "subnet_group" {
-  name       = "${var.subnet_group_name}"
-  subnet_ids = ["${var.subnet_one}","${var.subnet_two}"] 
+  name       = var.subnet_group_name
+  subnet_ids = [var.subnet_one,var.subnet_two] 
 
   tags = {
     Name = "My DB subnet group"
@@ -17,10 +17,10 @@ resource "aws_db_subnet_group" "subnet_group" {
 
 
 resource "aws_security_group" "db_sg" {
-  name        = "${var.db_sg_name}"
+  name        = var.db_sg_name
   description = "Security group for my ec2 access to db"
  
-  vpc_id = "${var.vpc}"
+  vpc_id = var.vpc
   
   ingress {
     from_port   =  3306
@@ -44,7 +44,6 @@ resource "aws_db_parameter_group" "example" {
     create_before_destroy = true
   }
 }
-
 
 resource "aws_db_instance" "rds_db" {
 

@@ -18,7 +18,7 @@ data "aws_iam_policy_document" "user_policy" {
     "secretsmanager:ListSecrets",
     "secretsmanager:BatchGetSecretValue"
     ]
-    resources = ["arn:aws:secretsmanager:${var.region}:${var.account_id}:secret:${var.secrets_name}*"]
+    resources = ["arn:aws:secretsmanager:${var.region}:${var.account_id}:secret:${var.secrets_name_ESO}*"]
   }
 }
 

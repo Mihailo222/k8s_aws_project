@@ -1,7 +1,7 @@
 resource "kubernetes_ingress" "nginx_ingress" {
   metadata {
-    name      = "${var.name}"
-    namespace = "${var.namespace}"
+    name      = "${var.name_ing}"
+    namespace = "${var.namespace_ing}"
   }
 
   spec {

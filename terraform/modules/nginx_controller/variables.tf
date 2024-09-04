@@ -21,8 +21,8 @@ description = "Nemaspace"
 type = string
 default = ""
 }
-
+/*
 variable "variable_from_tfvars" {
 description = "Variables from tfvars."
 type = string
-}
+}*/

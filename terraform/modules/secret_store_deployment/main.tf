@@ -3,22 +3,23 @@ resource "kubernetes_manifest" "secretstore_sample" {
     apiVersion = "external-secrets.io/v1beta1"
     kind       = "SecretStore"
     metadata = {
-      name = "${var.secret_store_name}"
+      name = var.secret_store_name
+      namespace = var.secret_store_namespace
     }
     spec = {
       provider = {
         aws = {
           service = "SecretsManager"
-          region  = "${var.region}"
+          region  = var.region
           auth = {
             secretRef = {
               accessKeyIDSecretRef = {
-                name = "${var.aws_auth_secret}"
-                key  = "${var.access_key}"
+                name = var.aws_auth_secret
+                key  = var.access_key
               }
               secretAccessKeySecretRef = {
-                name = "${var.aws_auth_secret}"
-                key  = "${var.secret_access_key}"
+                name = var.aws_auth_secret
+                key  = var.secret_access_key
               }
             }
           }

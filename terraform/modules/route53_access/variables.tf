@@ -10,13 +10,13 @@ variable "cluster_oidc_id" {
   default = ""
 }
 
-variable "namespace" {
+variable "namespace_r53" {
   description = "Namespace for resource deployment."
   type = string
   default = ""
 }
 
-variable "service_account_name" {
+variable "service_account_name_r53" {
   description = "Service account name."
   type = string
   default=""
@@ -38,8 +38,8 @@ variable "account_id" {
   type = string
   default = ""
 }
-
+/*
 variable "variable_from_tfvars" {
   description = "Variables from tfvars."
   default = ""
-}
+}*/

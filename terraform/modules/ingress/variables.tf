@@ -1,31 +1,31 @@
-variable "name" {
+variable "name_ing" {
   description = "Name  of a ingress resource"
   type = string
-  default = "nginx-ingress"
+  default = ""
 }
 
-variable "namespace" {
+variable "namespace_ing" {
   description = "Namespace for ingress resource"
   type = string
-  default = "default"
+  default = ""
 }
 
 variable "ingress_class_name" {
   description = "Ingress class name."
   type = string
-  default = "nginx"
+  default = ""
 }
 
 variable "host" {
   description = "Host."
   type = string
-  default = "mydomain1.academy.cyberlab.rs"
+  default = ""
 }
 
 variable "path" {
   description = "Path for a specific domain."
   type = string
-  default = "/"
+  default = ""
 }
 
 variable "service_name" {
@@ -39,11 +39,11 @@ variable "service_port" {
   type = number
   default = 8080
 }
-
+/*
 variable "variable_from_tfvars" {
   description = "Variables from tfvars"
   type = string
-}
+}*/
 
 
 

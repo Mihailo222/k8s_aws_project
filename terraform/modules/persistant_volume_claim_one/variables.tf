@@ -1,4 +1,4 @@
-variable "name" {
+variable "pv_name" {
   description = "Persistant volume name."
   type = string
   default = ""
@@ -39,11 +39,4 @@ variable "persistent_volume_reclaim_policy" {
   type = string
   default = ""
 }
-
-variable "variables_from_tfvars" {
-  description = "Variables from tfvars file"
-  type = string
-}
-
-
 

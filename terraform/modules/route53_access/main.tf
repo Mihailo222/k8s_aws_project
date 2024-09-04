@@ -12,7 +12,7 @@ data "aws_iam_policy_document" "assume_role_policy" {
     condition {
       test     = "StringEquals"
       variable = "oidc.eks.${var.region}.amazonaws.com/id/${var.cluster_oidc_id}:sub" 
-      values  = ["system:serviceaccount:${var.namespace}:${var.service_account_name}"] 
+      values  = ["system:serviceaccount:${var.namespace_r53}:${var.service_account_name_r53}"] 
     }
   }
 }

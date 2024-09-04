@@ -77,8 +77,8 @@ phpClientHttpsFix:
 
 nextcloud:
   host: nextcloud.kube.home
-  username: admin
-  password: admin
+  username: ${nextcloud_admin_username}
+  password: ${nextcloud_admin_password}
   ## Use an existing secret
   existingSecret:
     enabled: false
@@ -116,7 +116,7 @@ nextcloud:
   objectStore:
     # https://docs.nextcloud.com/server/latest/admin_manual/configuration_files/primary_storage.html#simple-storage-service-s3
     s3:
-      enabled: true
+      enabled: ${s3_enabled}
       # ignored if nextcloud.objectstore.s3.existingSecret is not empty string
       accessKey: ""
       # ignored if nextcloud.objectstore.s3.existingSecret is not empty string
@@ -132,7 +132,7 @@ nextcloud:
       # this is the default in the nextcloud docs
       region: "eu-central-1"
       # required if using s3, the name of the bucket you'd like to use
-      bucket: "mihailo-s3-bucket-test"
+      bucket: ${bucket_name}
       # object prefix in bucket
       prefix: ""
       # set to true if you are not using DNS for your buckets.
@@ -349,13 +349,13 @@ internalDatabase:
 ## External database configuration
 ##
 externalDatabase:
-  enabled: true
+  enabled: ${external_db_active}
 
   ## Supported database engines: mysql or postgresql
   type: mysql
 
   ## Database host
-  host:
+  host: 
   ## Database user
   user:
   ## Database password
@@ -364,12 +364,12 @@ externalDatabase:
   database:
   ## Use a existing secret
   existingSecret:
-    enabled: true
-    secretName: kube-secret
-    hostKey: MYSQL_HOST
-    usernameKey: MYSQL_USER
-    passwordKey: MYSQL_PASSWORD
-    databaseKey: MYSQL_DATABASE
+    enabled: ${existing_db_creds_secret}
+    secretName: ${db_secret_name}
+    ${hostKey}: ${hostValue}
+    ${usernameKey}: ${usernameValue}
+    ${passwordKey}: ${passwordValue}
+    ${databaseKey}: ${databaseValue}
 
 
 ##
@@ -445,7 +445,7 @@ postgresql:
 ##
 
 redis:
-  enabled: true
+  enabled: ${redisEnabled}
   auth:
     enabled: false
     password: ''
@@ -455,13 +455,13 @@ redis:
     existingSecretPasswordKey: ""
   # Since Redis is used for caching only, you might want to use a storageClass with different reclaim policy and backup settings
   global:
-    storageClass: "gp2"
+    storageClass: "${redisStorageClass}"
   master:
     persistence:
-      enabled: true
+      enabled: ${masterRedisSet}
   replica:
     persistence:
-      enabled: true
+      enabled: ${slaveRedisSet}
 
 
 ## Cronjob to execute Nextcloud background tasks

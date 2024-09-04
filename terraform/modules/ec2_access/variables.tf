@@ -10,7 +10,7 @@ variable "account_id" {
   default = ""
 }
 
-variable "variables_from_tfvars" {
+/*variable "variables_from_tfvars" {
   description = "Variables from .tfvars file"
   type = string
-}
+}*/

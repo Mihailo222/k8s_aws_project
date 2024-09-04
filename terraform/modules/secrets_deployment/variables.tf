@@ -34,8 +34,8 @@ variable "secret_description" {
   type = string
   default = "Test secret."
 }
-
+/*
 variable "variables_from_tfvars" {
   description = "Variables imported from .tfvars file"
   type = string
-}
+}*/

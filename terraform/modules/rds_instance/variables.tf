@@ -82,7 +82,8 @@ variable "allocated_storage" {
   default = 20
 }
 
+/*
 variable "variables_from_tfvars" {
   description = ".tfvars file"
   type = string
-}
+}*/

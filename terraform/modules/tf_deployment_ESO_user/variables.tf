@@ -10,7 +10,7 @@ variable "user_policy_name" {
   default = "userpolicymihailo"
 }
 
-variable "secrets_name" {
+variable "secrets_name_ESO" {
   description = "Secret name from secret manager"
   type = string
   default = "mihailo_nextcloud_secrets" //import from additional module
@@ -28,8 +28,9 @@ variable "account_id" {
   default="976552365380"
 }
 
-variable "variables_from_tfvars" {
-  description = "Variables from .tfvars file."
-  type = string
+variable "secret_store_namespace" {
+  description = "SS namespace."
+  type = any
+  default = ""
 }
 

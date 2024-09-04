@@ -4,6 +4,7 @@ resource "kubernetes_manifest" "exampleextsecret" {
     kind       = "ExternalSecret"
     metadata = {
       name = "${var.external_secret_name}"
+      namespace = var.external_secret_namespace
     }
     spec = {
       refreshInterval = "10m"

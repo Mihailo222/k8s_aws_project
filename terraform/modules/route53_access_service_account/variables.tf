@@ -22,7 +22,7 @@ variable "user_id" {
   default = ""
 }
 
-variable "variables_from_tfvars" {
+/*variable "variables_from_tfvars" {
   description = "Variables from tfvars."
   type = string
-}
+}*/

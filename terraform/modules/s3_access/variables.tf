@@ -1,4 +1,4 @@
-variable "region" {
+variable "region_s3" {
   description = "Region for resource deployment"
   type = string
   default = ""
@@ -9,13 +9,13 @@ variable "cluster_oidc_id" {
   default = ""
 }
 
-variable "namespace" {
+variable "namespace_s3" {
   description = "Namespace for resource deployment"
   type = string
   default = ""
 }
 
-variable "service_account_name" {
+variable "service_account_name_s3" {
   description = "Name for future service account."
   type = string
   default="" //will be created in the future
@@ -41,7 +41,8 @@ variable "access_role4_s3_bucket" {
   default = ""
 }
 
+/*
 variable "variable_from_tfvars" {
   description = "Variable from tfvars."
   type = string
-}
+}*/

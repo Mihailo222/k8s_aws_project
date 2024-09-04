@@ -34,7 +34,8 @@ variable "depends_on_two" {
   default = ""
 }
 
-variable "variables_from_tfvars" {
-  description = "Variables from tfvars."
-  type = string
+variable "external_secret_namespace" {
+  description = "ES namespace."
+  type = any
+  default = ""
 }
